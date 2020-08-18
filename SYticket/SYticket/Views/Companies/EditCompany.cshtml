@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "EditCompany";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-9 col-lg-12 col-xl-10">
+            <div class="card shadow-lg o-hidden border-0 my-5">
+                <div class="card-body p-0">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h4 class="text-dark mb-4">Edit Company Informations @ViewBag.ci.company_Name</h4>
+                                </div>
+                                @using (Html.BeginForm("EditCompany", "Companies", FormMethod.Post, new { encType = "multipart/form-data", id = ViewBag.ci.company_ID }))
+                                {
+                                    <div class="form-group"><input class="form-control form-control-user" type="text" name="ComapanyName" value="@ViewBag.ci.company_Name" placeholder="Company Name" required></div>
+                                    <div class="form-group" style="font-size: 15px;"><label>Logo</label><input type="file" id="img" accept="image/*" value="@ViewBag.ci.company_Logo" name="Photo" style="margin-left: 12px;width: 290px;height: 32px;"> <br /> <img src="@ViewBag.ci.company_Logo" width="50" height="50" /> </div>
+                                    <button class="btn btn-primary btn-block text-white btn-user" type="submit" style="margin-bottom: 18px;">Update</button>
+                                }
+                                <div class="text-center"></div>
+                                <div class="text-center"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

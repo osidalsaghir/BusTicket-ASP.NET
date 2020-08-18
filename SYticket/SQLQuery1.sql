@@ -1,0 +1,1 @@
+﻿exec FindTravel @from = 'Manisa' , @to = 'istanbu' , @date = '10/28/1999 12:00:00 AM' ; 

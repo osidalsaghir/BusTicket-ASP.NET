@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SYticketModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SYticketEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="FindTravel" ReturnType="Collection(SYticketModel.FindTravel_Result)">
+      <Parameter Name="from" Mode="In" Type="String" />
+      <Parameter Name="to" Mode="In" Type="String" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="FindTravel_Result">
+    <Property Type="Int32" Name="Travel_ID" Nullable="false" />
+    <Property Type="Int32" Name="company_ID" Nullable="false" />
+    <Property Type="String" Name="from_city" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="to_city" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="startsAt" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="endsAt" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="maxPassengers" Nullable="false" />
+    <Property Type="Double" Name="price" Nullable="false" />
+  </ComplexType>
+</Schema>

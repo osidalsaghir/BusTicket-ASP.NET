@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "AddTravel";
+}
+
+ </nav>
+<h1 class="text-center" style="margin-bottom: 29px;">Travel Add</h1>
+<!-- Start: 1 Row 2 Columns Section -->
+<section>
+    <div class="container">
+        <form action="/Travel/AddCompanyTravel" method="post">
+            <div class="form-row">
+                <div class="col align-self-start" style="margin: 0px;margin-right: 5px;">
+                    <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputEmail" aria-describedby="emailHelp" name="from_city" placeholder="From"></div>
+                    <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputEmail-1" aria-describedby="emailHelp" placeholder="To" name="to_city"></div>
+                    <div class="form-group"><label><strong>Start date and time</strong></label><input class="form-control" type="date" placeholder="starts" name="startsAt"> <br /><input class="form-control" type="time" placeholder="starts" name="timestart"> </div>
+                    <div class="form-group"><label><strong>End date and time</strong></label><input class="form-control" type="date" placeholder="Ends" name="endsAt"><br /><input class="form-control" type="time" placeholder="starts" name="timeend"></div>
+                </div>
+                <div class="col-md-6 align-self-center" style="margin-left: 5px;">
+                    <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputEmail-3" aria-describedby="emailHelp" placeholder="Maximum Passengers" name="maxPassengers"></div>
+                    <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputPassword-2" placeholder="Price" name="price"></div><button class="btn btn-primary btn-block text-white btn-user" type="submit" style="margin-bottom: 18px;">Add Travel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+

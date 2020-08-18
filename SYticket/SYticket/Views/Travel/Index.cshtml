@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@using SYticket.Models;
+
+
+    <div class="container-fluid">
+        <div class="card shadow">
+            <div class="card-header py-3">
+                <p class="text-primary m-0 font-weight-bold">All Travels</p>
+            </div>
+            <div class="card-body">
+                
+                <div class="table-responsive table mt-2"
+                     id="dataTable" role="grid" aria-describedby="dataTable_info">
+                    <table class="table my-0" id="dataTable">
+                        <thead>
+                            <tr>
+
+                                <th style="width: 233px;">From</th>
+                                <th style="width: 233px;">To</th>
+                                <th style="width: 233px;">Starts</th>
+                                <th style="width: 233px;">Ends</th>
+                                <th style="width: 233px;">Maximum Pessengers</th>
+                                <th style="width: 233px;">Price</th>
+                                <th style="width: 233px;">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Travel t in ViewBag.t)
+                            {
+                            <tr>
+                                <td>@t.from_city</td>
+                                <td>@t.to_city</td>
+                                <td>@t.startsAt</td>
+                                <td>@t.endsAt</td>
+                                <td>@t.maxPassengers</td>
+                                <td>@t.price</td>
+                                <td><a type="button" href="/Travel/DeleteTravel/@t.Travel_ID" class="btn btn-danger">delete</a></td>
+                                
+                            </tr>
+                            }
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><strong>From</strong></td>
+                                <td><strong>To</strong></td>
+                                <td><strong>Starts</strong></td>
+                                <td><strong>Ends</strong></td>
+                                <td><strong>Maximum Pessengers</strong></td>
+                                <td><strong>Price</strong></td>
+                                <td><strong>Delete</strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

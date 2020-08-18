@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@using SYticket.Models;
+<div class="container-fluid">
+    <div class="card shadow">
+        <div class="card-header py-3">
+            <p class="text-primary m-0 font-weight-bold">Companies Information</p>
+        </div>
+        <div class="card-body">
+            <a href="/Email/AddEmail/@ViewBag.ci.company_ID" class="btn btn-primary" type="button" style="margin-bottom: 12px;">Add Admin +</a>
+            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                <table class="table my-0" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Admin Email</th>
+                            <th style="width: 233px;">Role</th>
+                            <th style="width: 233px;">Edit</th>
+                            <th style="width: 233px;">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (User @u in @ViewBag.u)
+                        {
+
+
+                        <tr>
+                            <td>@u.user_Email</td>
+                            <td>@u.user_role</td>
+                            <td><a type="button" href="/Email/EditEmail/@u.user_Login_id" class="btn btn-info">edit</a></td>
+                            <td><a type="button" href="/Email/DeleteCompanyEmail/@u.user_Login_id" class="btn btn-danger">delete</a></td>
+                        </tr>
+
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>Admin Email</strong></td>
+                            <td><strong>Admin Password</strong></td>
+                            <td><strong>edit</strong></td>
+                            <td><strong>delete</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

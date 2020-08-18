@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "EditAddress";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-9 col-lg-12 col-xl-10">
+            <div class="card shadow-lg o-hidden border-0 my-5">
+                <div class="card-body p-0">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h4 class="text-dark mb-4">Update Address for @ViewBag.ci.company_Name</h4>
+                                </div>
+                                <form class="user" action="/Address/EditCompanyAddress/@ViewBag.ca.address_ID" method="post">
+                                    <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputEmail" placeholder="@ViewBag.ca.company_Street" value="@ViewBag.ca.company_Street" name="street"></div>
+                                    <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputEmail-2" placeholder="@ViewBag.ca.company_neighborhood" value="@ViewBag.ca.company_neighborhood" name="neighborhood"></div>
+                                    <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputEmail-1" placeholder="@ViewBag.ca.company_city" value="@ViewBag.ca.company_city" name="City"></div>
+                                    <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputEmail-1" placeholder="@ViewBag.ca.company_zip_code" value="@ViewBag.ca.company_zip_code" name="Zip_Code"></div>
+                                    <button class="btn btn-primary btn-block text-white btn-user"
+                                            type="submit">
+                                        UPDATE ADDRESS
+                                    </button>
+                                    <hr><a class="btn btn-primary btn-block text-white btn-google btn-user" role="button" style="width: 84px;">Back<br></a>
+                                </form>
+                                <div class="text-center"></div>
+                                <div class="text-center"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SYticketModelStoreContainer" CdmEntityContainer="SYticketEntities">
+    <FunctionImportMapping FunctionImportName="FindTravel" FunctionName="SYticketModel.Store.FindTravel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SYticketModel.FindTravel_Result">
+          <ScalarProperty Name="Travel_ID" ColumnName="Travel_ID" />
+          <ScalarProperty Name="company_ID" ColumnName="company_ID" />
+          <ScalarProperty Name="from_city" ColumnName="from_city" />
+          <ScalarProperty Name="to_city" ColumnName="to_city" />
+          <ScalarProperty Name="startsAt" ColumnName="startsAt" />
+          <ScalarProperty Name="endsAt" ColumnName="endsAt" />
+          <ScalarProperty Name="maxPassengers" ColumnName="maxPassengers" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

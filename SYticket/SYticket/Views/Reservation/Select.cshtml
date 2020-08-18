@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Select";
+    Layout = "~/Views/Shared/_LayoutReg.cshtml";
+}
+
+    <div class="col-lg-6">
+        <div class="p-5">
+            <div class="text-center">
+                <h4 class="text-dark mb-4">Reserve</h4>
+            </div>
+            <h1 style="font-size: 20px;">Seat Number</h1>
+            <form class="user" action="/Reservation/Reserve/@ViewBag.t.Travel_ID" method="post">
+                <div class="form-group"><select class="form-control" name="SeatNumber"><optgroup label="Select Seat Number">
+                    @for (int i = 1; i <= ViewBag.t.maxPassengers; i++)
+                    {
+
+                        if (ViewBag.seatReserved.Contains(i.ToString()))
+                        {
+
+                        }
+                        else
+                        {
+                            <option value="@i" selected>@i</option>
+                        }
+
+
+                    }
+
+</optgroup></select></div>
+                <button class="btn btn-primary btn-block text-white btn-user" type="submit">
+                    Reserve
+                </button>
+                <hr><a class="btn btn-primary btn-block text-white btn-google btn-user" role="button" style="width: 84px;">Back<br></a>
+            </form>
+
+        </div>
+    </div>
+

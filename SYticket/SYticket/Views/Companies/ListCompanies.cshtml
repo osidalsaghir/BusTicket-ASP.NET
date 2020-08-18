@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewBag.Title = "ListCompanies";
+}
+@using SYticket.Models;
+
+<div class="container-fluid">
+    <div class="card shadow">
+        <div class="card-header py-3">
+            <p class="text-primary m-0 font-weight-bold">Companies Information</p>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                <table class="table my-0" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Company Name</th>
+                            <th style="width: 233px;">Admin Emails</th>
+                            <th>Address Information</th>
+                            <th>Contact Information</th>
+                            <th>Number of Travels</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (companyInfo @items in @ViewBag.ci)
+                        {
+                            <tr>
+                                <td>@items.company_Name</td>
+                                @{
+                                    var count = 0;
+                                }
+                                @foreach (User @user in ViewBag.u)
+                                {
+                                    if (user.companyLogin_ID == items.company_ID)
+                                    {
+                                        count++;
+                                    }
+
+
+                                }
+                                <td><a href="/Email/Index/@items.company_ID"><span class="badge badge-warning">@count Emails Available</span></a></td>
+
+
+                                @{
+                                    count = 0;
+                                }
+                                @foreach (companyAddress @ca in ViewBag.ca)
+                                {
+                                    if (ca.company_ID == items.company_ID)
+                                    {
+                                        count++;
+                                    }
+
+
+                                }
+
+                                <td><a href="/Address/Index/@items.company_ID"><span class="badge badge-info">@count Address available</span></a></td>
+
+                                @{
+                                    count = 0;
+                                }
+
+                                @foreach (companyContact @cc in ViewBag.cc)
+                                {
+                                    if (cc.company_ID == items.company_ID)
+                                    {
+                                        count++;
+                                    }
+
+
+                                }
+                                <td><a href="/Contact/Index/@items.company_ID"><span class="badge badge-dark">@count Contacts Available </span></a></td>
+                                @{
+                                    count = 0;
+                                }
+
+                                @foreach (Travel t in ViewBag.t)
+                                {
+                                    if (t.company_ID == items.company_ID)
+                                    {
+                                        count++;
+                                    }
+
+
+                                }
+                                <td> <a href="/Travel/ListTravelCompany/@items.company_ID"> <span class="badge badge-success">@count Travel Available</span></a></td>
+                                <td><a type="button" href="/Companies/EditCompany/@items.company_ID" class="btn btn-light">edit</a></td>
+                                <td><a type="button" href="/Companies/DeleteCompany/@items.company_ID" class="btn btn-danger">delete</a></td>
+                            </tr>
+                        }
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>Company Name</strong></td>
+                            <td><strong>Admin Emails</strong></td>
+                            <td><strong>Address Information</strong></td>
+                            <td><strong>Contact Information</strong></td>
+                            <td><strong>Number of Travels</strong></td>
+                            <td><strong>edit</strong></td>
+                            <td><strong>Delete</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

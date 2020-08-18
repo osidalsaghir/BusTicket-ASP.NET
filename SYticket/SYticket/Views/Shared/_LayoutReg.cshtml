@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Login - Brand</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    @Styles.Render("~/Content/assets/bootstrap/css/bootstrap.min.css?h=d713482654854334e623a38f03607c1f")
+    @Styles.Render("~/Content/assets/fonts/fontawesome-all.min.css?h=0c556d5438933bda409408695b5733e7")
+    @Styles.Render("~/Content/assets/css/styles.min.css?h=9f88af14e4582d86f393782447a31404")
+</head>
+
+
+
+
+<body class="bg-gradient-primary">
+
+    @if (Context.User.Identity.IsAuthenticated)
+    {
+        <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav flex-nowrap ml-auto">
+                    <div class="d-none d-sm-block topbar-divider"> </div>
+                    <li class="nav-item dropdown no-arrow" role="presentation">
+                        <div class="nav-item dropdown no-arrow">
+                            <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><h4>@HttpContext.Current.User.Identity.Name</h4></a>
+                            <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu">
+                                <a class="dropdown-item" role="presentation" href="/Reservation"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Find Travel</a>
+                                <a class="dropdown-item" role="presentation" href="/Reservation/GetTickets"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;My Travels</a>
+                                <a class="dropdown-item" role="presentation" href="/Settings/Index"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
+                                <div class="dropdown-divider"></div><a class="dropdown-item" role="presentation" href="/User/SignOut"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    }
+    <div class="container">
+        <div class="card shadow-lg o-hidden border-0 my-5">
+            <div class="card-body p-0">
+                <div class="row">
+
+
+                    @RenderBody()
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/Content/assets/js/jquery.min.js?h=83e266cb1712b47c265f77a8f9e18451")
+    @Scripts.Render("~/Content/assets/bootstrap/js/bootstrap.min.js?h=7c038681746a729e2fff9520a575e78c")
+    @Scripts.Render("~/Content/assets/js/chart.min.js?h=0c556d5438933bda409408695b5733e7")
+    @Scripts.Render("https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js")
+    @Scripts.Render("~/Content/assets/js/script.min.js?h=b86d882c5039df370319ea6ca19e5689")
+
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>

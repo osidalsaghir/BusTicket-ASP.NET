@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutReg.cshtml";
+}
+@using SYticket.Models;
+<div class="container-fluid">
+    <div class="card shadow">
+        <div class="card-header py-3">
+            <p class="text-primary m-0 font-weight-bold">Companies Information</p>
+        </div>
+        <div class="card-body">
+            <!-- Start: 1 Row 2 Columns Section -->
+            <section>
+                <div class="container">
+                    <form action="/Reservation/Index">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputPassword-2" placeholder="From" name="from"></div>
+                                <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputPassword-1" placeholder="To" name="to"></div>
+                                <h1 style="font-size: 20px;">Date</h1>
+                                <div class="form-group"><input class="form-control" type="date" name="date"></div><button class="btn btn-primary btn-block text-white btn-user" type="submit" style="margin-bottom: 18px;">Search</button>
+                            </div>
+                            <di
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- End: 1 Row 2 Columns Section -->
+            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                <table class="table my-0" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th style="width: 233px;">From</th>
+                            <th style="width: 233px;">To</th>
+                            <th style="width: 233px;">Starts</th>
+                            <th style="width: 233px;">Ends</th>
+                            <th style="width: 233px;">Maximum Pessengers</th>
+                            <th style="width: 233px;">Price</th>
+                            <th style="width: 233px;">Select</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var t in ViewBag.t)
+                        {
+                            <tr>
+                                <td>@t.from_city</td>
+                                <td>@t.to_city</td>
+                                <td>@t.startsAt</td>
+                                <td>@t.endsAt</td>
+                                <td>@t.maxPassengers</td>
+                                <td>@t.price</td>
+                                <td><a href="/Reservation/Select/@t.Travel_ID" type="button" class="badge badge-success">select</a></td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>From</strong></td>
+                            <td><strong>To</strong></td>
+                            <td><strong>Starts</strong></td>
+                            <td><strong>Ends</strong></td>
+                            <td><strong>Maximum Pessengers</strong></td>
+                            <td><strong>Price</strong></td>
+                            <td><strong>Select</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>

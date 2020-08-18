@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@using SYticket.Models;
+
+<div class="container-fluid">
+    <div class="card shadow">
+        <div class="card-header py-3">
+            <p class="text-primary m-0 font-weight-bold">@ViewBag.ci.company_Name Addresses</p>
+        </div>
+        <div class="card-body">
+            <a  href="/Address/AddAddress/@ViewBag.ci.company_ID" class="btn btn-primary" type="button" style="margin-bottom: 12px;">Add Address +</a>
+            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                <table class="table my-0" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Street</th>
+                            <th style="width: 233px;">neighborhood<br></th>
+                            <th>city<br></th>
+                            <th>zip codde</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (companyAddress @ca in ViewBag.ca)
+                        {
+
+
+                        <tr>
+                            <td>@ca.company_Street</td>
+                            <td>@ca.company_neighborhood</td>
+                            <td>@ca.company_city</td>
+                            <td>@ca.company_zip_code</td>
+                            <td><a type="button" href="/Address/EditAddress/@ca.address_ID" class="btn btn-info">edit</a></td>
+                            <td><a type="button" href="/Address/DeleteAddress/@ca.address_ID" class="btn btn-danger">delete</a></td>
+
+                        </tr>
+
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>Street<br><br></strong></td>
+                            <td><strong>Neighborhood<br><br></strong></td>
+                            <td><strong>City<br><br></strong></td>
+                            <td><strong>Zip Code<br></strong></td>
+                            <td><strong>Edit</strong></td>
+                            <td><strong>Delete</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

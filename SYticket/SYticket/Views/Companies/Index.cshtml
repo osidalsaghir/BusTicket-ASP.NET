@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1 class="text-center" style="margin-bottom: 29px;">Companies Management</h1>
+<!-- Start: 1 Row 2 Columns Section -->
+<section>
+    <div class="container">
+        
+           
+                <div class="form-row">
+                    <div class="col align-self-start" style="margin: 0px;margin-right: 5px;">
+                        <h1 class="text-center" style="margin-bottom: 23px;font-size: 20px;">Add Company</h1>
+                        <div class="form-group"><input class="form-control form-control-user" type="text" name="ComapanyName" placeholder="Company Name" required></div>
+                        <div class="form-group" style="font-size: 15px;"><label>Logo</label><input type="file" id="img" accept="image/*" name="Photo" style="margin-left: 12px;width: 290px;height: 32px;" required></div>
+                        <label>Login information</label>
+                        <hr>
+                        <div class="form-group"><input class="form-control form-control-user" type="email" id="exampleInputEmail-1" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="CompanyEmail" required></div>
+                        <div class="form-group"><input class="form-control form-control-user" type="password" id="exampleInputPassword-1" placeholder="Password" name="CompanyPassword" required></div>
+                    </div>
+                    <div class="col-md-6 align-self-center" style="margin-left: 5px;">
+                        <label>Contact information</label>
+                        <hr>
+                        <div class="form-group"><input class="form-control form-control-user" type="email" id="exampleInputEmail-2" aria-describedby="emailHelp" placeholder="Enter Email " name="CompanyInfoEmail" required></div>
+                        <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputEmail-3" aria-describedby="emailHelp" placeholder="Enter Phone Number" name="CompanyInfoPhoneNumber" required></div>
+                        <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputPassword-2" placeholder="Enter Website" name="CompanyInfoWebsite" required></div>
+                        <label>Address information</label>
+                        <hr>
+                        <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputEmail-4" aria-describedby="emailHelp" placeholder="Street" name="street" required></div>
+                        <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputEmail-5" aria-describedby="emailHelp" placeholder="neighborhood" name="neighborhood" required></div>
+                        <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputPassword-3" placeholder="city" name="city" required></div>
+                        <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputPassword-4" placeholder="zip code" name="zipCode" required></div><button class="btn btn-primary btn-block text-white btn-user" type="submit" style="margin-bottom: 18px;">Add Company</button>
+                    </div>
+                </div>
+            }
+           
+        </div>
+</section>

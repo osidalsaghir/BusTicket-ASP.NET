@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@using SYticket.Models;
+
+
+<div class="container-fluid">
+    <div class="card shadow">
+        <div class="card-header py-3">
+            <p class="text-primary m-0 font-weight-bold">Company Contacts</p>
+        </div>
+        <div class="card-body">
+            <a href="/Contact/AddContact/@ViewBag.ci.company_ID" class="btn btn-primary" type="button" style="margin-bottom: 12px;">Add Contact +</a>
+            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                <table class="table my-0" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Phone Number</th>
+                            <th style="width: 233px;">Email</th>
+                            <th>Website</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (companyContact @cc in ViewBag.cc)
+                        {
+                        <tr>
+                            <td>@cc.company_PhoneNumber</td>
+                            <td>@cc.company_Email</td>
+                            <td>@cc.company_Website</td>
+                            <td><a type="button" href="/Contact/EditContact/@cc.contact_ID" class="btn btn-info">edit</a></td>
+                            <td><a type="button" href="/Contact/DeleteContact/@cc.contact_ID" class="btn btn-danger">delete</a></td>
+                        </tr>
+                        }
+
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>Phone Number</strong></td>
+                            <td><strong>Email</strong></td>
+                            <td><strong>Website</strong></td>
+                            <td><strong>edit</strong></td>
+                            <td><strong>delete</strong></td>
+
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
